@@ -74,6 +74,7 @@ app.register( async (app) => {
               case 'stop': {
                 const twilio_message = { event: 'stop' }
                 await connection.socket.send(JSON.stringify(twilio_message))
+                state = 'stopped'
               }
             }
             break
